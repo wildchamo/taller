@@ -80,14 +80,14 @@ function onClick_Borrar( reg ) {
 
 
 
-function limpiar( ) {
+/* function limpiar( ) {
 	document.getElementById("codigo").value = "";
 	document.getElementById("nombre").value = "";
 	
 	regSeleccionado = null;
 	
 	document.getElementById("codigo").focus();
-}
+} */
 
 function existeCodigo( ) {
 	var tabla = document.getElementById("tabla").getElementsByTagName('tbody')[0];
