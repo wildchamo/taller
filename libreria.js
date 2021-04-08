@@ -18,11 +18,8 @@ function leerDatos() {
 	var datos = { };
 	datos["codigo"] = document.getElementById("codigo").value;
 	datos["nombre"] = document.getElementById("nombre").value;
-	
-	/*
 	datos["costo"] = document.getElementById("costo").value;
 	datos["iva"] = document.getElementById("iva").value;
-	*/
 	return datos;
 	}
 
@@ -37,13 +34,21 @@ function insertar(datos) {
 	campo2 = NuevoReg.insertCell(1);
 	campo2.innerHTML = datos.nombre;
 
-    campo3 = NuevoReg.insertCell(2);
+	campo1 = NuevoReg.insertCell(2);
+	campo1.innerHTML = datos.costo;
+	
+	campo2 = NuevoReg.insertCell(3);
+	campo2.innerHTML = datos.iva;
+
+    campo3 = NuevoReg.insertCell(4);
 	campo3.innerHTML = "<a onClick='onClick_Editar(this);'>Editar</a> <a  onClick='onClick_Borrar(this);'>Borrar</a>";
 }
 
 function actualizar( datos ) {
 	regSeleccionado.cells[0].innerHTML = datos.codigo;
 	regSeleccionado.cells[1].innerHTML = datos.nombre;
+	regSeleccionado.cells[2].innerHTML = datos.costo;
+	regSeleccionado.cells[3].innerHTML = datos.iva;
 }
 
 function onClick_Editar( reg ) {
