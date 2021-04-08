@@ -20,7 +20,7 @@ function leerDatos() {
 	datos["nombre"] = document.getElementById("nombre").value;
 	datos["costo"] = document.getElementById("costo").value;
 	datos["iva"] = document.getElementById("iva").value;
-	datos["estado"] = document.getElementsByClassName("estado").value;
+	datos["estado"] = document.getElementById("estado").value;
     datos["fecha"] = document.getElementById("fecha").value;
     datos["comentarios"] = document.getElementById("comentarios").value;
 	return datos;
