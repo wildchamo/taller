@@ -1,0 +1,104 @@
+<!DOCTYPE html5>
+<html>
+	
+	<head>
+		<title>Programa web - CRUD</title>
+		<link href="estilos.css" rel="stylesheet">
+		<script src="libreria.js"></script>	
+	</head>
+	
+	<body>
+		<div id="contenedor">
+			<div id="encabezado">
+			</div>
+			<div id="menu">
+				<nav> 
+					<a href="#">Inicio</a>
+				    <a href="#">Productos</a>
+					<a href="#">Inventarios</a>
+					<a href="#">Acerca de</a>
+				</nav>
+			</div>
+			<div id="contenido">
+				<div id="primario">
+					<form name="fr" onsubmit="event.preventDefault();enviar();">
+						<table border=0>
+							<caption>Formulario Producto</caption>
+							<tr>
+								<td><label>C&oacute;digo</label></td>
+								<td><input type="text" id="codigo" name="codigo" required oninvalid="setCustomValidity('Digite el c&oacute;digo del producto')" oninput="setCustomValidity('')"></td>
+							</tr>
+							<tr>
+								<td><label>Nombre</label></td>
+								<td><input type="text" id="nombre" name="nombre" required="required" oninvalid="setCustomValidity('Digite el nombre del producto')" oninput="setCustomValidity('')"></td>
+							</tr>
+							<tr>
+								<td><label>Costo</label></td>
+								<td><input type="number" name="costo" min=0 max=999999999 required oninvalid="setCustomValidity('Digite el costo del producto')" oninput="setCustomValidity('')"></td>
+							</tr>
+							<tr>
+								<td><label>% Iva</label></td>
+								<td><select name="iva" >   <!-- required oninvalid="setCustomValidity('Seleccione el %Iva')" oninput="setCustomValidity('')" -->
+										<option></option>
+										<option value=0>0</option>
+										<option value=10>10</option>
+										<option value=19>19</option>
+									</select>
+								</td>
+								
+							</tr>
+							<tr>
+								<td><label>Estado</label></td>
+								<td>
+									<label><input type="radio" name="estado" value="ACTIVO" >Activo</label>
+									<label><input type="radio" name="estado" value="INACTIVO" >Inactivo</label>
+								</td>
+								
+								<script>
+										alert( document.fr.estado.value );
+								</script>
+								
+								
+							</tr>
+							<tr>
+								<td><label>Fecha de registro</label></td>
+								<td>
+									<input type="date" name="fecha" min="01/02/2020" max="31/12/2020" value="ACTIVO" >
+								</td>
+							</tr>
+							<tr>
+								<td><label>Comentarios</label></td>
+								<td><textarea name="comentarios" placeholder="Escribe los comentarios"></textarea></td>
+							</tr>
+							<tr>
+								<td colspan=2 align="right"><input type="submit" value="Grabar"></td>
+							</tr>
+						</table>
+					</form>
+				</div>
+				<div id="secundario" id="productos">
+					<table style="margin-top:20px;" id= "tabla">
+						<thead>
+							<tr>
+								<th>codigo</th>
+								<th>Nombre</th>
+								<th>Costo</th>
+								<th>% Iva</th>
+								<th>Estado</th>
+								<th>Fecha Reg</th>
+								<th>Comentarios</th>
+								<th></th>
+						</thead>
+						<tbody>
+						
+						</tbody>
+					</table>
+
+				</div>
+			</div>
+			<div id="pie">
+			</div>
+		</div>
+	</body>
+	
+</html>
