@@ -28,13 +28,13 @@ function leerDatos() {
 
 function insertar(datos) {
 	var tabla = document.getElementById("tabla").getElementsByTagName('tbody')[0];
-	
+	console.log(tabla);
 	var NuevoReg = tabla.insertRow(tabla.length);
 	
 	campo1 = NuevoReg.insertCell(0);
 	campo1.innerHTML = datos.codigo;
 	
-	campo2 = NuevoReg.insertCell(1);
+	campo2 = NuevoReg.insertCell(1);	
 	campo2.innerHTML = datos.nombre;
 
 	campo3 = NuevoReg.insertCell(2);
@@ -93,12 +93,17 @@ function existeCodigo( ) {
 	var tabla = document.getElementById("tabla").getElementsByTagName('tbody')[0];
 	var codigoABuscar = document.getElementById("codigo").value = "";
 	var existe = false;
+	for(var i=0;i<tabla.rows.length;i++){
+		if(tabla.rows[i].cells[0].innerHTML==codigoABuscar){
+			alert("el codigo"+ codigoABuscar+"ya esta digitado");
+			limpiar();
+		}
+	}
+		
+	}
 	
-	// Debe definir la estructura para buscar el codigo en el arrego tabla.
-	
-	return existe;
 	
 	
-}
+
 
 
