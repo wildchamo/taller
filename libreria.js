@@ -25,6 +25,18 @@ function leerDatos() {
     datos["comentarios"] = document.getElementById("comentarios").value;
 	return datos;
 	}
+	function existeCodigo( ) {
+		var tabla = document.getElementById("tabla").getElementsByTagName('tbody')[0];
+		var codigoABuscar = document.getElementById("codigo").value = "";
+		var existe = false;
+		for(var i=0;i<tabla.rows.length;i++){
+			if(tabla.rows[i].cells[0].innerHTML==codigoABuscar){
+				alert("el codigo"+ codigoABuscar+"ya esta digitado");
+				limpiar();
+			}
+		}
+			
+		}
 
 function insertar(datos) {
 	var tabla = document.getElementById("tabla").getElementsByTagName('tbody')[0];
@@ -80,27 +92,16 @@ function onClick_Borrar( reg ) {
 
 
 
-/* function limpiar( ) {
+function limpiar( ) {
 	document.getElementById("codigo").value = "";
 	document.getElementById("nombre").value = "";
 	
 	regSeleccionado = null;
 	
 	document.getElementById("codigo").focus();
-} */
+} 
 
-function existeCodigo( ) {
-	var tabla = document.getElementById("tabla").getElementsByTagName('tbody')[0];
-	var codigoABuscar = document.getElementById("codigo").value = "";
-	var existe = false;
-	for(var i=0;i<tabla.rows.length;i++){
-		if(tabla.rows[i].cells[0].innerHTML==codigoABuscar){
-			alert("el codigo"+ codigoABuscar+"ya esta digitado");
-			limpiar();
-		}
-	}
-		
-	}
+
 	
 	
 	
